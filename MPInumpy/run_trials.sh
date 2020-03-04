@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -N 11
-#SBATCH --job-name=np_v_mpi_np
+#SBATCH --job-name=mpinumpy
 #SBATCH --ntasks-per-node 48
 #SBATCH -o np_v_mpi_np.%j.stdout
 #SBATCH -e np_v_mpi_np.%j.error
