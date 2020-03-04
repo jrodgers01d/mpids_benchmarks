@@ -6,7 +6,7 @@
 #SBATCH -e np_v_mpi_np.%j.error
 #SBATCH -x crill-001
 #SBATCH --exclusive
-#SBATCH -t 08:00:00
+#SBATCH -t 10:00:00
 #SBATCH -p crill
 
 module load mpi4py/3.0.0-python3.4
