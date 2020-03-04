@@ -98,7 +98,7 @@ if __name__ == '__main__':
     for power in range(0, 28):
         iters = 10000 if power < 5 else 100 if power < 6 else 1
         size = 2**power
-        print("mpi_np,creation,%d,%.9f" %(size, creation(size, iters)))
+        print("mpi_np,creation,%d,%.9f" %(size, creation(size, iters=iters)))
         mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
         print("mpi_np,add,%d,%.9f" %(size, add(mpi_np_arr, iters=iters)))
         print("mpi_np,sub,%d,%.9f" %(size, sub(mpi_np_arr, iters=iters)))

@@ -97,7 +97,7 @@ if __name__ == '__main__':
     for power in range(0, 28):
         iters = 10000 if power < 5 else 100 if power < 6 else 1
         size = 2**power
-        print("np,creation,%d,%.9f" %(size, creation(size, iters)))
+        print("np,creation,%d,%.9f" %(size, creation(size, iters=iters)))
         np_arr = np.arange(size, dtype=np.float64)
         print("np,add,%d,%.9f" %(size, add(np_arr, iters=iters)))
         print("np,sub,%d,%.9f" %(size, sub(np_arr, iters=iters)))
