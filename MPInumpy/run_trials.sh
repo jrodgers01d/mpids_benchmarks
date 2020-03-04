@@ -2,8 +2,8 @@
 #SBATCH -N 11
 #SBATCH --job-name=mpinumpy
 #SBATCH --ntasks-per-node 48
-#SBATCH -o np_v_mpi_np.%j.stdout
-#SBATCH -e np_v_mpi_np.%j.error
+#SBATCH -o mpinumpy.%j.stdout
+#SBATCH -e mpinumpy.%j.error
 #SBATCH -x crill-001
 #SBATCH --exclusive
 #SBATCH -t 10:00:00
