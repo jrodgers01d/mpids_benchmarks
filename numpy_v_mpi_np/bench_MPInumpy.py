@@ -110,4 +110,6 @@ if __name__ == '__main__':
         print("mpi_np,std,%d,%.9f" %(size, _std(mpi_np_arr, iters=iters)))
         print("mpi_np,slice,%d,%.9f" %(size, slicing(mpi_np_arr, iters=iters)))
         print("mpi_np,iterate,%d,%.9f" %(size, iterate(mpi_np_arr, iters=iters)))
+        if power > 24:
+            continue
         print("mpi_np,reshape,%d,%.9f" %(size, reshape(mpi_np_arr, size, iters=iters)))

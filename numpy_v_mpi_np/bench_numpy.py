@@ -109,4 +109,6 @@ if __name__ == '__main__':
         print("np,std,%d,%.9f" %(size, _std(np_arr, iters=iters)))
         print("np,slice,%d,%.9f" %(size, slicing(np_arr, iters=iters)))
         print("np,iterate,%d,%.9f" %(size, iterate(np_arr, iters=iters)))
+        if power > 24:
+            continue
         print("np,reshape,%d,%.9f" %(size, reshape(np_arr, size, iters=iters)))
