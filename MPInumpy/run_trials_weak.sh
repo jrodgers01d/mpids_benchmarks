@@ -5,7 +5,7 @@
 #SBATCH -e mpinumpy-weak.%j.error
 #SBATCH -x crill-001
 #SBATCH --exclusive
-#SBATCH -t 10:00:00
+#SBATCH -t 05:00:00
 #SBATCH -p crill
 
 module load mpi4py/3.0.0-python3.4
