@@ -5,7 +5,7 @@
 #SBATCH -o np_v_mpi_np.%j.stdout
 #SBATCH -e np_v_mpi_np.%j.error
 #SBATCH -x crill-001
-#SBATCH -w crill-00[2-9],crill-01[0-6]
+#SBATCH -w crill-002
 #SBATCH --exclusive
 #SBATCH -t 05:59:00
 #SBATCH -p crill
