@@ -109,43 +109,33 @@ if __name__ == '__main__':
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
     n_procs = comm.Get_size()
-    size = 2**25
+    size = 2**26
     iters = 1
     mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
 
     creation_time = creation(size, iters=iters)
+    add_time = add(mpi_np_arr, iters=iters)
+    sub_time = sub(mpi_np_arr, iters=iters)
+    mul_time = mul(mpi_np_arr, iters=iters)
+    div_time = div(mpi_np_arr, iters=iters)
+    max_time = _max(mpi_np_arr, iters=iters)
+    mean_time = _mean(mpi_np_arr, iters=iters)
+    sum_time = _sum(mpi_np_arr, iters=iters)
+    std_time = _std(mpi_np_arr, iters=iters)
+    slicing_time = slicing(mpi_np_arr, iters=iters)
+    iterate_time = iterate(mpi_np_arr, iters=iters)
+    reshape_time = reshape(mpi_np_arr, size, iters=iters)
+
     if rank == 0:
         print("mpi_np,creation,%d,%d,%.9f" %(n_procs, size, creation_time))
-    add_time = add(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,add,%d,%d,%.9f" %(n_procs, size, add_time))
-    sub_time = sub(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,sub,%d,%d,%.9f" %(n_procs, size, sub_time))
-    mul_time = mul(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,mul,%d,%d,%.9f" %(n_procs, size, mul_time))
-    div_time = div(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,div,%d,%d,%.9f" %(n_procs, size, div_time))
-    max_time = _max(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,max,%d,%d,%.9f" %(n_procs, size, max_time))
-    mean_time = _mean(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,mean,%d,%d,%.9f" %(n_procs, size, mean_time))
-    sum_time = _sum(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,sum,%d,%d,%.9f" %(n_procs, size, sum_time))
-    std_time = _std(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,std,%d,%d,%.9f" %(n_procs, size, std_time))
-    slicing_time = slicing(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,slice,%d,%d,%.9f" %(n_procs, size, slicing_time))
-    iterate_time = iterate(mpi_np_arr, iters=iters)
-    if rank == 0:
         print("mpi_np,iterate,%d,%d,%.9f" %(n_procs, size, iterate_time))
-    reshape_time = reshape(mpi_np_arr, size, iters=iters)
-    if rank == 0:
         print("mpi_np,reshape,%d,%d,%.9f" %(n_procs, size, reshape_time))

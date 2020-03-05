@@ -109,7 +109,7 @@ if __name__ == '__main__':
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
     n_procs = comm.Get_size()
-    local_size =  2**16
+    local_size =  2**17
     size = n_procs * local_size
     iters = 1
     mpi_np_arr = mpi_np.arange(size, dtype=np.float64)

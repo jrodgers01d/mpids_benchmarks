@@ -1,9 +1,8 @@
 #!/bin/bash
-#SBATCH -N 11
-#SBATCH --job-name=mpinumpy
-#SBATCH --ntasks-per-node 48
-#SBATCH -o mpinumpy.%j.stdout
-#SBATCH -e mpinumpy.%j.error
+#SBATCH -N 15
+#SBATCH --job-name=mpinumpy-strong
+#SBATCH -o mpinumpy-strong.%j.stdout
+#SBATCH -e mpinumpy-strong.%j.error
 #SBATCH -x crill-001
 #SBATCH --exclusive
 #SBATCH -t 10:00:00
@@ -16,7 +15,7 @@ DATE=$(date +%Y%m%d_%H_%M_%S);
 
 echo $HEADER_SCALING > mpi_np_strong_${DATE}.csv
 for run in {1..50};do
-  for cores in 1 2 4 8 16 32 64 128 256 512;do
-    mpiexec -n $cores python3 ./bench_strong.py >> mpi_np_strong_${DATE}.csv
+  for procs in 1 2 4 8 16 32 64 128 256 512;do
+    mpiexec -n $procs --map-by node python3 ./bench_strong.py >> mpi_np_strong_${DATE}.csv
   done
 done
