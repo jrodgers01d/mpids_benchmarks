@@ -67,14 +67,13 @@ def global_getting(mpi_np_arr, iters=10000):
 
 if __name__ == '__main__':
     for power in range(0, 28):
-        iters = 10000 if power < 5 else 100 if power < 6 else 1
+        iters = 10000 if power < 5 else 1000 if power < 6 else 10
         size = 2**power
         print("mpi_np,empty,%d,%.9f" %(size, empty(size, iters=iters)))
         print("mpi_np,arange,%d,%.9f" %(size, arange(size, iters=iters)))
         mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
-        print("mpi_np,local_slicing,%d,%.9f" %(size, local_slicing(mpi_np_arr, iters=iters)))
-        print("mpi_np,global_iterate,%d,%.9f" %(size, global_iterate(mpi_np_arr, iters=iters)))
-        print("mpi_np,local_setting,%d,%.9f" %(size, local_setting(mpi_np_arr, iters=iters)))
-        print("mpi_np,global_setting,%d,%.9f" %(size, global_setting(mpi_np_arr, iters=iters)))
-        print("mpi_np,local_getting_time,%d,%.9f" %(size, local_getting(mpi_np_arr, iters=iters)))
-        print("mpi_np,global_getting_time,%d,%.9f" %(size, global_getting(mpi_np_arr, iters=iters)))
+        print("mpi_np,local_slicing,%d,%.9f" %(size, local_slicing(mpi_np_arr, iters=10000)))
+        print("mpi_np,local_setting,%d,%.9f" %(size, local_setting(mpi_np_arr, iters=10000)))
+        print("mpi_np,global_setting,%d,%.9f" %(size, global_setting(mpi_np_arr, iters=10000)))
+        print("mpi_np,local_getting,%d,%.9f" %(size, local_getting(mpi_np_arr, iters=10000)))
+        print("mpi_np,global_getting,%d,%.9f" %(size, global_getting(mpi_np_arr, iters=iters)))
