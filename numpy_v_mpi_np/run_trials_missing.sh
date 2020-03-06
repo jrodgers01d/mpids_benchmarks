@@ -17,6 +17,6 @@ DATE=$(date +%Y%m%d_%H_%M_%S);
 
 echo $HEADER_NPVMPINP > np_v_mpi_np_missing_${DATE}.csv
 for run in {1..50};do
-  python3 ./bench_numpy.py >> np_v_mpi_np_missing_${DATE}.csv
+  python3 ./bench_numpy_missing.py >> np_v_mpi_np_missing_${DATE}.csv
   mpiexec -n 1 python3 ./bench_MPInumpy_missing.py >> np_v_mpi_np_missing_${DATE}.csv
 done
