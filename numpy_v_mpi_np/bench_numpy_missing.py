@@ -41,5 +41,5 @@ if __name__ == '__main__':
         print("np,empty,%d,%.9f" %(size, empty(size, iters=iters)))
         print("np,arange,%d,%.9f" %(size, arange(size, iters=iters)))
         np_arr = np.arange(size, dtype=np.float64)
-        print("mpi_np,setting,%d,%.9f" %(size, setting(np_arr, iters=10000)))
-        print("mpi_np,getting,%d,%.9f" %(size, getting(np_arr, iters=10000)))
+        print("np,setting,%d,%.9f" %(size, setting(np_arr, iters=10000)))
+        print("np,getting,%d,%.9f" %(size, getting(np_arr, iters=10000)))
