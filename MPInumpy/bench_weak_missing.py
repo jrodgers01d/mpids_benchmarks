@@ -91,10 +91,10 @@ if __name__ == '__main__':
     global_getting_time = global_getting(mpi_np_arr, iters=iters)
 
     if rank == 0:
-        print("mpi_np,empty,%d,%d,%.9f" %(n_procs, size, empty_time))
-        print("mpi_np,arange,%d,%d,%.9f" %(n_procs, size, arange_time))
-        print("mpi_np,local_slicing,%d,%d,%.9f" %(n_procs, size, local_slicing_time))
-        print("mpi_np,local_setting,%d,%d,%.9f" %(n_procs, size, local_setting_time))
-        print("mpi_np,global_setting,%d,%d,%.9f" %(n_procs, size, global_setting_time))
-        print("mpi_np,local_getting,%d,%d,%.9f" %(n_procs, size, local_getting_time))
-        print("mpi_np,global_getting,%d,%d,%.9f" %(n_procs, size, global_getting_time))
+        print("mpi_np,empty,%d,%d,%.9f" %(n_procs, local_size, empty_time))
+        print("mpi_np,arange,%d,%d,%.9f" %(n_procs, local_size, arange_time))
+        print("mpi_np,local_slicing,%d,%d,%.9f" %(n_procs, local_size, local_slicing_time))
+        print("mpi_np,local_setting,%d,%d,%.9f" %(n_procs, local_size, local_setting_time))
+        print("mpi_np,global_setting,%d,%d,%.9f" %(n_procs, local_size, global_setting_time))
+        print("mpi_np,local_getting,%d,%d,%.9f" %(n_procs, local_size, local_getting_time))
+        print("mpi_np,global_getting,%d,%d,%.9f" %(n_procs, local_size, global_getting_time))
