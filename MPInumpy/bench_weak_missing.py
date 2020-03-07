@@ -96,5 +96,5 @@ if __name__ == '__main__':
         print("mpi_np,local_slicing,%d,%d,%.9f" %(n_procs, size, local_slicing_time))
         print("mpi_np,local_setting,%d,%d,%.9f" %(n_procs, size, local_setting_time))
         print("mpi_np,global_setting,%d,%d,%.9f" %(n_procs, size, global_setting_time))
-        print("mpi_np,local_getting_time,%d,%d,%.9f" %(n_procs, size, local_getting_time))
-        print("mpi_np,global_getting_time,%d,%d,%.9f" %(n_procs, size, global_getting_time))
+        print("mpi_np,local_getting,%d,%d,%.9f" %(n_procs, size, local_getting_time))
+        print("mpi_np,global_getting,%d,%d,%.9f" %(n_procs, size, global_getting_time))
