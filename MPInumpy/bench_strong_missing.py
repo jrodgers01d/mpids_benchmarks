@@ -79,16 +79,15 @@ if __name__ == '__main__':
     rank = comm.Get_rank()
     n_procs = comm.Get_size()
     size = 2**25
-    iters = 1
+    iters = 100
     mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
 
     empty_time = empty(size, iters=iters)
     arange_time = arange(size, iters=iters)
-    local_slicing_time = local_slicing(mpi_np_arr, iters=iters)
-    global_iterate_time = global_iterate(mpi_np_arr, iters=iters)
-    local_setting_time = local_setting(mpi_np_arr, iters=iters)
-    global_setting_time = global_setting(mpi_np_arr, iters=iters)
-    local_getting_time = local_getting(mpi_np_arr, iters=iters)
+    local_slicing_time = local_slicing(mpi_np_arr, iters=10000)
+    local_setting_time = local_setting(mpi_np_arr, iters=10000)
+    global_setting_time = global_setting(mpi_np_arr, iters=10000)
+    local_getting_time = local_getting(mpi_np_arr, iters=10000)
     global_getting_time = global_getting(mpi_np_arr, iters=iters)
 
     if rank == 0:
