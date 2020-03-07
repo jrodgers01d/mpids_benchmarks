@@ -19,7 +19,7 @@ if __name__ == '__main__':
     n_procs = comm.Get_size()
     local_size =  2**16
     size = n_procs * local_size
-    iters = 100
+    iters = 1
     mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
 
     collect_data_time = collect_data(mpi_np_arr, iters=iters)
