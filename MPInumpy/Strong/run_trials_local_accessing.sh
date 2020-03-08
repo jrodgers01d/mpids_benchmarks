@@ -5,7 +5,7 @@
 #SBATCH -o local_acc.%j.stdout
 #SBATCH -e local_acc.%j.error
 #SBATCH -x crill-001
-#SBATCH -w crill-00[2-9], crill-01[0-6]
+#SBATCH -w crill-00[2-9],crill-01[0-6]
 #SBATCH --exclusive
 #SBATCH -t 5:59:00
 #SBATCH -p crill
