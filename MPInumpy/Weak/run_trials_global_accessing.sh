@@ -1,7 +1,6 @@
 #!/bin/bash
-#SBATCH -N 1
+#SBATCH -N 15
 #SBATCH --job-name=global_acc
-#SBATCH --ntasks-per-node 1
 #SBATCH -o global_acc.%j.stdout
 #SBATCH -e global_acc.%j.error
 #SBATCH -x crill-001

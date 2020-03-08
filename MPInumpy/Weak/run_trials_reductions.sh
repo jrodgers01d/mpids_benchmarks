@@ -1,7 +1,6 @@
 #!/bin/bash
-#SBATCH -N 1
+#SBATCH -N 15
 #SBATCH --job-name=reductions
-#SBATCH --ntasks-per-node 1
 #SBATCH -o reductions.%j.stdout
 #SBATCH -e reductions.%j.error
 #SBATCH -x crill-001

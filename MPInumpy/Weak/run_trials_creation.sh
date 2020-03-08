@@ -1,7 +1,6 @@
 #!/bin/bash
-#SBATCH -N 1
+#SBATCH -N 15
 #SBATCH --job-name=creation
-#SBATCH --ntasks-per-node 1
 #SBATCH -o creation.%j.stdout
 #SBATCH -e creation.%j.error
 #SBATCH -x crill-001

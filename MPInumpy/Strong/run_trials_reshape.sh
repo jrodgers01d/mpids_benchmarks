@@ -1,7 +1,6 @@
 #!/bin/bash
-#SBATCH -N 1
+#SBATCH -N 15
 #SBATCH --job-name=reshape
-#SBATCH --ntasks-per-node 1
 #SBATCH -o reshape.%j.stdout
 #SBATCH -e reshape.%j.error
 #SBATCH -x crill-001

@@ -1,7 +1,6 @@
 #!/bin/bash
-#SBATCH -N 1
+#SBATCH -N 15
 #SBATCH --job-name=collect_data
-#SBATCH --ntasks-per-node 1
 #SBATCH -o collect_data.%j.stdout
 #SBATCH -e collect_data.%j.error
 #SBATCH -x crill-001

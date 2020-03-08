@@ -1,7 +1,6 @@
 #!/bin/bash
-#SBATCH -N 1
+#SBATCH -N 15
 #SBATCH --job-name=arithmetic
-#SBATCH --ntasks-per-node 1
 #SBATCH -o arithmetic.%j.stdout
 #SBATCH -e arithmetic.%j.error
 #SBATCH -x crill-001
