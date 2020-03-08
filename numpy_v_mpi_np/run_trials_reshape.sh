@@ -5,7 +5,6 @@
 #SBATCH -o reshape.%j.stdout
 #SBATCH -e reshape.%j.error
 #SBATCH -x crill-001
-#SBATCH -w crill-00[1-9],crill-01[0-6]
 #SBATCH --exclusive
 #SBATCH -t 5:59:00
 #SBATCH -p crill
