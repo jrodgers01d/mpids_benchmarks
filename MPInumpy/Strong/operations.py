@@ -7,6 +7,7 @@ measure_time = lambda: MPI.Wtime()
 #Creation Routines
 def array(size, iters=10000, comm=MPI.COMM_WORLD):
     data = np.arange(size, dtype=np.float64).tolist()
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         mpi_np.array(data, dtype=np.float64, comm=comm, dist='b')
@@ -15,6 +16,7 @@ def array(size, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def empty(size, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         mpi_np.empty(size, dtype=np.float64, comm=comm, dist='b')
@@ -23,6 +25,7 @@ def empty(size, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def arange(size, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         mpi_np.arange(size, dtype=np.float64, comm=comm, dist='b')
@@ -32,6 +35,7 @@ def arange(size, iters=10000, comm=MPI.COMM_WORLD):
 
 #Reduction Operations
 def add(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr + 1.0
@@ -40,6 +44,7 @@ def add(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def sub(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr - 1.0
@@ -48,6 +53,7 @@ def sub(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def mul(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr * 1.0
@@ -56,6 +62,7 @@ def mul(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def div(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr / 1.0
@@ -65,6 +72,7 @@ def div(arr, iters=10000, comm=MPI.COMM_WORLD):
 
 #Arithmetic Operations
 def _max(arr, iters=10000, axis=None, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr.max(axis=axis)
@@ -73,6 +81,7 @@ def _max(arr, iters=10000, axis=None, comm=MPI.COMM_WORLD):
     return time/iters
 
 def _mean(arr, iters=10000, axis=None, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr.mean(axis=axis)
@@ -81,6 +90,7 @@ def _mean(arr, iters=10000, axis=None, comm=MPI.COMM_WORLD):
     return time/iters
 
 def _sum(arr, iters=10000, axis=None, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr.sum(axis=axis)
@@ -89,6 +99,7 @@ def _sum(arr, iters=10000, axis=None, comm=MPI.COMM_WORLD):
     return time/iters
 
 def _std(arr, iters=10000, axis=None, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr.std(axis=axis)
@@ -98,6 +109,7 @@ def _std(arr, iters=10000, axis=None, comm=MPI.COMM_WORLD):
 
 #Access Operations
 def setting(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr[0] = 1.0
@@ -106,6 +118,7 @@ def setting(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def getting(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr[0]
@@ -114,6 +127,7 @@ def getting(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def slicing(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr[::2]
@@ -122,6 +136,7 @@ def slicing(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def iterate(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         for val in arr:
@@ -131,6 +146,7 @@ def iterate(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def reshape(arr, size, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr.reshape(size, 1)
@@ -139,6 +155,7 @@ def reshape(arr, size, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def collect_data(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier() 
     time = measure_time()
     for _ in range(iters):
         arr.collect_data()

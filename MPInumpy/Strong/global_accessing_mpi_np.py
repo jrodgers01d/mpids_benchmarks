@@ -11,10 +11,8 @@ if __name__ == '__main__':
     iters = 1
     mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
 
-    variable_iters = 10000 if n_procs < 16 else 10
-
     setting_time = setting(mpi_np_arr)
-    getting_time = getting(mpi_np_arr, iters=variable_iters)
+    getting_time = getting(mpi_np_arr, iters=1000)
     slicing_time = slicing(mpi_np_arr, iters=iters)
 
     if rank == 0:

@@ -4,6 +4,7 @@ from mpi4py import MPI
 from operations import iterate, measure_time
 
 def local_setting(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr.local[0] = 1.0
@@ -12,6 +13,7 @@ def local_setting(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def local_getting(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier()
     time = measure_time()
     for _ in range(iters):
         arr.local[0]
@@ -20,6 +22,7 @@ def local_getting(arr, iters=10000, comm=MPI.COMM_WORLD):
     return time/iters
 
 def local_slicing(arr, iters=10000, comm=MPI.COMM_WORLD):
+    comm.Barrier() 
     time = measure_time()
     for _ in range(iters):
         arr.local[::2]

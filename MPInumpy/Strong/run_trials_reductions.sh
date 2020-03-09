@@ -20,8 +20,10 @@ HEADER_SCALING="\"Type\",\"Op\",\"Num_Proc\",\"Size\",\"Time\"";
 DATE=$(date +%Y%m%d_%H_%M_%S);
 
 echo $HEADER_SCALING > ./Results/results_reductions_${DATE}.csv
-for run in {1..50};do
+date;
+for run in {1..5};do
   for procs in 1 2 4 8 16 32 64 128 256 512;do
     mpiexec -n $procs --map-by node python3 ./reductions_mpi_np.py >> ./Results/results_reductions_${DATE}.csv
   done
 done
+date;
