@@ -4,7 +4,7 @@ from operations import getting, setting, slicing
 
 if __name__ == '__main__':
     for power in range(0, 28):
-        variable_iters = 10000 if power < 18 100 if power < 21 else 1
+        variable_iters = 10000 if power < 18 else 100 if power < 21 else 1
         size = 2**power
         mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
         print("mpi_np,global_setting,%d,%.9f" %(size, getting(mpi_np_arr, iters=1000)))
