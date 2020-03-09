@@ -22,6 +22,6 @@ DATE=$(date +%Y%m%d_%H_%M_%S);
 echo $HEADER_NPVMPINP > ./Results/results_collect_data_${DATE}.csv
 for run in {1..50};do
   for procs in 1 2 4 8 16 32 64 128 256 512;do
-    mpiexec -n $procs --map-by node python3 ./reshape_mpi_np.py >> ./Results/results_collect_data_${DATE}.csv
+    mpiexec -n $procs --map-by node python3 ./collect_data_mpi_np.py >> ./Results/results_collect_data_${DATE}.csv
   done
 done
