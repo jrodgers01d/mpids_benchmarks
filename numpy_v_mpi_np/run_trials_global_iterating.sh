@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH -N 1
-#SBATCH --job-name=global_acc
+#SBATCH --job-name=global_iter
 #SBATCH --ntasks-per-node 1
-#SBATCH -o global_acc.%j.stdout
-#SBATCH -e global_acc.%j.error
+#SBATCH -o global_iter.%j.stdout
+#SBATCH -e global_iter.%j.error
 #SBATCH -x crill-001
 #SBATCH --exclusive
 #SBATCH -t 5:59:00
