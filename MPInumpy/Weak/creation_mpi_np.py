@@ -11,8 +11,8 @@ if __name__ == '__main__':
     iters = 1
 
     array_time = array(size, iters=iters)
-    empty_time = empty(size, iters=10000)
-    arange_time = arange(size, iters=1000)
+    empty_time = empty(size, iters=10)
+    arange_time = arange(size, iters=10)
 
     if rank == 0:
         print("mpi_np,array,%d,%d,%.9f" %(n_procs, local_size, array_time))

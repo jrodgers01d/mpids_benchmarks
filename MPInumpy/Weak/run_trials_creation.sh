@@ -6,7 +6,7 @@
 #SBATCH -x crill-001
 #SBATCH -w crill-00[2-9],crill-01[0-6]
 #SBATCH --exclusive
-#SBATCH -t 1:40:00
+#SBATCH -t 5:59:00
 #SBATCH -p crill
 
 module load mpi4py/3.0.0-python3.4
