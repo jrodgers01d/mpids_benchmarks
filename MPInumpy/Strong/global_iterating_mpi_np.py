@@ -22,7 +22,7 @@ if __name__ == '__main__':
     iters = 1
     mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
 
-    global_iterate_time = global_iterating(mpi_np_arr, iters=iters)))
+    global_iterate_time = global_iterating(mpi_np_arr, iters=iters)
 
     if rank == 0:
         print("mpi_np,global_iterate,%d,%d,%.9f" %(n_procs, size, global_iterate_time))
