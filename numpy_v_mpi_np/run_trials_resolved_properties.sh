@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sbatch run_trials_creation.sh
 sbatch run_trials_global_accessing.sh
 sbatch run_trials_reductions.sh
 sbatch run_trials_global_iterating.sh

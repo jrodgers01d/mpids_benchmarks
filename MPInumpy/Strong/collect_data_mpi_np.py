@@ -10,10 +10,6 @@ if __name__ == '__main__':
     size = 2**25
     iters = 1
     mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
-    #Resolve properties
-    mpi_np_arr.globalshape
-    mpi_np_arr.globalsize
-    mpi_np_arr.globalndim
 
     collect_data_time = collect_data(mpi_np_arr, iters=iters)
 

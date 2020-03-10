@@ -7,10 +7,7 @@ if __name__ == '__main__':
         variable_iters = 10000 if power < 21 else 10
         size = 2**power
         mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
-        #Resolve properties
-        mpi_np_arr.globalshape
-        mpi_np_arr.globalsize
-        mpi_np_arr.globalndim
+
 
         print("mpi_np,max,%d,%.9f" %(size, _max(mpi_np_arr, iters=variable_iters)))
         print("mpi_np,mean,%d,%.9f" %(size, _mean(mpi_np_arr, iters=variable_iters)))
