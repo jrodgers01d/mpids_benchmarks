@@ -11,6 +11,10 @@ if __name__ == '__main__':
     size = n_procs * local_size
     iters = 1
     mpi_np_arr = mpi_np.arange(size, dtype=np.float64)
+    #Resolve properties
+    mpi_np_arr.globalshape
+    mpi_np_arr.globalsize
+    mpi_np_arr.globalndim
 
     setting_time = setting(mpi_np_arr)
     getting_time = getting(mpi_np_arr, iters=1000)
