@@ -16,7 +16,7 @@ if __name__ == '__main__':
                 observations, labels = gen_blobs(num_obs, features, k)
                 mpi_obs = mpi_np.array(observations, dtype=np.float64)
 
-                for _ in range(10):
+                for _ in range(5):
                     time = measure_time()
                     centroids, labels = mpi_cluster.kmeans(mpi_obs, k)
                     time = measure_time() - time
