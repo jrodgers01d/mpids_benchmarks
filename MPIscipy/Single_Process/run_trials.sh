@@ -18,5 +18,5 @@ fi
 DATE=$(date +%Y%m%d_%H_%M_%S);
 
 date;
-mpiexec -n 1 --map-by node python3 ./mpi_scipy_kmeans.py >> ./Results/results_single_${DATE}.csv
+mpiexec -n 1 python3 ./mpi_scipy_kmeans.py >> ./Results/results_single_${DATE}.csv
 date;
