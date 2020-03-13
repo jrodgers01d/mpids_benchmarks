@@ -8,4 +8,5 @@ def gen_blobs(samples, features, clusters):
     return ds.make_blobs(n_samples=samples,
                          n_features=features,
                          centers=clusters,
-                         random_state=20200421*clusters)
+                         random_state=0,
+                         center_box=(-100,100))
