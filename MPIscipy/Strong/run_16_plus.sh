@@ -18,9 +18,9 @@ fi
 HEADER_SCALING="\"Type\",\"Num_Proc\",\"Obs\",\"Feats\",\"Clusters\",\"Time\"";
 DATE=$(date +%Y%m%d_%H_%M_%S);
 
-echo $HEADER_SCALING > ./Results/results_strong_16p_%j_${DATE}.csv
+echo $HEADER_SCALING > ./Results/results_strong_16p_${DATE}.csv
 date;
 for procs in 16 32 64 128 256 512;do
-  mpiexec -n $procs --map-by node python3 ./mpi_scipy_kmeans.py $1 $2 >> ./Results/results_strong_16p_%j_${DATE}.csv
+  mpiexec -n $procs --map-by node python3 ./mpi_scipy_kmeans.py $1 $2 >> ./Results/results_strong_16p_${DATE}.csv
 done
 date;
