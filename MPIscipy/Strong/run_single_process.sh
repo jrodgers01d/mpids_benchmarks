@@ -5,7 +5,7 @@
 #SBATCH -e s_1p.%j.error
 #SBATCH -x crill-001,crill-10[1-5]
 #SBATCH --exclusive
-#SBATCH -t 2:00:00
+#SBATCH -t 6:00:00
 #SBATCH -p crill
 
 module load mpi4py/3.0.0-python3.4
