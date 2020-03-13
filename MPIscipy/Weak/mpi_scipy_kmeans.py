@@ -16,7 +16,8 @@ if __name__ == '__main__':
     local_size = 2**obs_power
     num_obs = n_procs * local_size
     k = 2
-    observations, labels = gen_blobs(num_obs, features, clusters)
+    features = 2
+    observations, labels = gen_blobs(num_obs, features, k)
     mpi_obs = mpi_np.array(observations, dist='b', dtype=np.float64)
 
     for _ in range(runs):
@@ -26,5 +27,5 @@ if __name__ == '__main__':
         time = measure_time() - time
         comm.reduce(time, op=MPI.MAX, root=0)
         if rank == 0:
-            print("mpi_scipy,%d,%d,%d,%d,%.9f" %(n_procs, num_obs, features, clusters, time))
+            print("mpi_scipy,%d,%d,%d,%d,%.9f" %(n_procs, num_obs, features, k, time))
         del centroids, labels
