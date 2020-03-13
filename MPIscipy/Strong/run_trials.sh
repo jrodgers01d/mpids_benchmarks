@@ -4,6 +4,7 @@
 for job in {1..1};do
   for power in {15..20};do
     sbatch ./run_single_process.sh 1 $power
+    sleep 5
   done
 done
 
