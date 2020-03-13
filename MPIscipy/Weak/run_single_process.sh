@@ -3,8 +3,7 @@
 #SBATCH --job-name=kmeans_weak
 #SBATCH -o kmeans_weak.%j.stdout
 #SBATCH -e kmeans_weak.%j.error
-#SBATCH -x crill-001
-#SBATCH -w crill-00[2-9],crill-01[0-6]
+#SBATCH -x crill-001,crill-10[1-5]
 #SBATCH --exclusive
 #SBATCH -t 2:00:00
 #SBATCH -p crill
