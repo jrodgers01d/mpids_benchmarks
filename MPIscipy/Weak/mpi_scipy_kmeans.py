@@ -27,5 +27,5 @@ if __name__ == '__main__':
         time = measure_time() - time
         comm.reduce(time, op=MPI.MAX, root=0)
         if rank == 0:
-            print("mpi_scipy,%d,%d,%d,%d,%.9f" %(n_procs, num_obs, features, k, time))
+            print("mpi_scipy,%d,%d,%d,%d,%.9f" %(n_procs, local_size, features, k, time))
         del centroids, labels
