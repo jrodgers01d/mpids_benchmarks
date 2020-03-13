@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -N 2
-#SBATCH --job-name=kmeans_strong
-#SBATCH -o kmeans_strong.%j.stdout
-#SBATCH -e kmeans_strong.%j.error
+#SBATCH --job-name=s_2p
+#SBATCH -o s_2p.%j.stdout
+#SBATCH -e s_2p.%j.error
 #SBATCH -x crill-001,crill-10[1-5]
 #SBATCH --exclusive
 #SBATCH -t 2:00:00
