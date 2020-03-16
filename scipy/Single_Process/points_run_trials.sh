@@ -18,5 +18,5 @@ fi
 DATE=$(date +%Y%m%d_%H_%M_%S);
 
 date;
-python3 ./points_scipy_kmeans.py >> ./Results/results_points_scipy_single_${DATE}.csv
+python3 ./points_seed_scipy_kmeans.py >> ./Results/results_points_scipy_single_${DATE}.csv
 date;
